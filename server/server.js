@@ -30,13 +30,12 @@ app.post("/send-sms", async (req, res) => {
     const response = await axios.post(
       "https://api.coolsms.co.kr/messages/v4/send",
       {
-        messages: [
-          {
-            to: process.env.MY_PHONE,
-            from: process.env.SENDER_PHONE,
-            text: message,
-          },
-        ],
+        message: {
+          // 여기를 배열(messages)에서 단일 객체(message)로 수정
+          to: process.env.MY_PHONE,
+          from: process.env.SENDER_PHONE,
+          text: message,
+        },
       },
       {
         headers: {
