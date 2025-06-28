@@ -23,7 +23,10 @@ form.addEventListener("submit", async (e) => {
   try {
     await fetch("https://onedayclass-sms-server.onrender.com/send-sms", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "hmac-sha256 NCSXTXVEMJC7BTKC:FDC1BAWYZD9A4KCB2EYHU6GWJEEPMW15",
+      },
       body: JSON.stringify({ name, phone, lesson }),
     });
 
