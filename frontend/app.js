@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
-    await fetch("https://onedayclass-sms-server.onrender.com", {
+    await fetch("https://onedayclass-sms-server.onrender.com/send-sms", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, phone, lesson }),
