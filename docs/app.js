@@ -4,7 +4,7 @@ const navMenu = document.getElementById("nav-menu");
 
 // 모바일 햄버거 메뉴 토글
 menuBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("hidden");
+  navMenu.classList.toggle("show");
 });
 
 form.addEventListener("submit", async (e) => {

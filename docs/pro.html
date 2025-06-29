@@ -5,13 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>원데이 클래스 - 프로소개</title>
+    <link rel="icon" href="img/logo01.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="img/logo01.ico" sizes="16x16" type="image/png">
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
     <header>
         <div class="container header-container">
-            <h1><a href="index.html">원데이 클래스</a></h1>
+            <div class="logo"><a href="index.html">OneDayClass</a></div>
             <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
             <nav id="nav-menu" class="hidden">
                 <a href="index.html">Home</a>
@@ -22,27 +24,51 @@
             </nav>
         </div>
     </header>
-
     <main>
+
+        <section class="pro-banner">
+            <h2>프로소개</h2>
+        </section>
         <section class="container">
             <h2>프로소개</h2>
             <div class="pro-profile">
                 <img src="img/pro01.png" alt="프로 사진" class="responsive-img" />
-                <p><strong>홍길동 프로</strong></p>
-                <p>KPGA 정회원, 10년 경력의 전문 골프 강사입니다.</p>
+                <p><strong>심보현 프로</strong></p>
+                <p>-KLPGA 프로</p>
+                <p>-제1회 코시포럼 회장배 골프 강연 진행</p>
+                <p>-교보생명 초청 숏게임/원포인트 레슨 진행</p>
+                <p>-신한투자증권 필드레슨</p>
+                <p>–국군간호사관학교 외래교수</p>
             </div>
             <div class="pro-profile">
                 <img src="img/pro02.png" alt="프로 사진" class="responsive-img" />
-                <p><strong>홍길동 프로</strong></p>
-                <p>KPGA 정회원, 10년 경력의 전문 골프 강사입니다.</p>
+                <p><strong>주가은 프로</strong></p>
+                <p>-KLPGA 프로</p>
+                <p>-KLPGA올포유 드림투어15차전 준우승</p>
+                <p>-KLPGA영광CC배 점프시드투어 3위</p>
+                <p>-박세리 더퀸즈TV촬영</p>
             </div>
             <div class="pro-profile">
                 <img src="img/pro03.png" alt="프로 사진" class="responsive-img" />
-                <p><strong>홍길동 프로</strong></p>
-                <p>KPGA 정회원, 10년 경력의 전문 골프 강사입니다.</p>
+                <p><strong>장명렬 프로</strong></p>
+                <p>-KAPGA 프로</p>
+                <p>-US-GTF 프로 정회원</p>
+                <p>-교보생명 FA컵 우승</p>
+                <p>-현)STI KOREA CSO.</p>
+                <p>-현)빌트모션아카테미 대표</p>
+                <p>-현)LPGA선수 한국어드바이저</p>
             </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 원데이 클래스 | All rights reserved.</p>
+            <p>
+                문의전화: 010-3281-8150
+            </p>
+        </div>
+    </footer>
 
     <script>
         const menuBtn = document.getElementById("menu-btn");

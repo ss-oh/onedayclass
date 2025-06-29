@@ -5,52 +5,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>원데이 클래스 - 홈</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="img/logo01.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="img/logo01.ico" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <div class="container header-container">
-            <h1><a href="index.html">원데이 클래스</a></h1>
-            <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
-            <nav id="nav-menu" class="hidden">
-                <a href="index.html">Home</a>
-                <a href="guide.html">이용안내</a>
-                <a href="pro.html">프로소개</a>
-                <a href="lessons.html">레슨일정</a>
-                <a href="apply.html">레슨 신청</a>
-            </nav>
-        </div>
+    <header><a href="index.html">
+            <div class="container header-container">
+                <div class="logo"><a href="index.html">OneDayClass</a></div>
+                <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
+                <nav id="nav-menu" class="hidden">
+                    <a href="index.html">Home</a>
+                    <a href="guide.html">이용안내</a>
+                    <a href="pro.html">프로소개</a>
+                    <a href="lessons.html">레슨일정</a>
+                    <a href="apply.html">레슨 신청</a>
+                </nav>
+            </div>
     </header>
 
     <main>
         <section class="container">
-            <h2>Home</h2>
-            <p>원데이 클래스에 오신 것을 환영합니다! 즐겁게 골프를 배워봐요.</p>
-            <img src="img/main.png" alt="홈 배너 이미지" class="responsive-img" />
-
             <div class="home-links">
                 <div class="link-box">
                     <h3>레슨 일정</h3>
                     <p>놓치지 말아야 할 지역별 무료레슨, 주요 일정을 확인해 보세요.</p>
                     <button onclick="location.href='lessons.html'">일정 확인</button>
                 </div>
-
                 <div class="link-box">
                     <h3>프로소개</h3>
                     <p>골프 프로들의 경력과 전문성을 자세히 소개합니다.</p>
                     <button onclick="location.href='pro.html'">프로소개</button>
                 </div>
-
                 <div class="link-box">
                     <h3>레슨 신청</h3>
                     <p>원하는 레슨을 선택해 간편하게 신청하세요.</p>
                     <button onclick="location.href='apply.html'">레슨신청</button>
                 </div>
-
             </div>
+            <img src="img/main.png" alt="홈 배너 이미지" class="responsive-img" />
+
+
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 원데이 클래스 | All rights reserved.</p>
+            <p>문의전화: 010-3281-8150</p>
+        </div>
+    </footer>
 
     <script>
         const menuBtn = document.getElementById("menu-btn");

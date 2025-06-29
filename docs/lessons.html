@@ -5,13 +5,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>원데이 클래스 - 레슨 일정</title>
+    <link rel="icon" href="img/logo01.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="img/logo01.ico" sizes="16x16" type="image/png">
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+        .month-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .month-btn {
+            padding: 8px 16px;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .month-btn.active {
+            background: #006633;
+            color: white;
+        }
+
+        .month-schedule.hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="container header-container">
-            <h1><a href="index.html">원데이 클래스</a></h1>
+            <div class="logo"><a href="index.html">OneDayClass</a></div>
             <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
             <nav id="nav-menu" class="hidden">
                 <a href="index.html">Home</a>
@@ -26,8 +53,15 @@
     <main>
         <section class="container">
             <h2>레슨 일정</h2>
-            <ul class="lesson-schedule">
-                <h2>7월</h2>
+
+            <!-- 월별 탭 -->
+            <div class="month-tabs">
+                <button class="month-btn active" data-month="july">7월</button>
+                <button class="month-btn" data-month="august">8월</button>
+            </div>
+
+            <!-- 7월 일정 -->
+            <ul class="lesson-schedule month-schedule" id="july">
                 <li>
                     <h3>7월9일(수)</h3>
                     <p>상계K점 스크린골프(오후13시~15시)</p>
@@ -50,45 +84,91 @@
                 </li>
                 <li>
                     <h3>7월17일(목)</h3>
-                    <p>동탄 더프라자골프 롯데(오후13시~오후15시)</p>
+                    <p>동탄 더프라자골프 롯데(오후13시~15시)</p>
                 </li>
                 <li>
                     <h3>7월18일(금)</h3>
-                    <p>일산 골프존스카이파크 (오후13시~15시)</p>
+                    <p>일산 골프존스카이파크(오후13시~15시)</p>
                 </li>
                 <li>
                     <h3>7월22일(화)</h3>
-                    <p>골프존 파크 장안온천점 (오후13시~15시)</p>
+                    <p>골프존 파크 장안온천점(오후13시~15시)</p>
                 </li>
                 <li>
                     <h3>7월23일(수)</h3>
-                    <p>대전 라운지도튼 봉명 (오후13시~15시)</p>
+                    <p>대전 라운지도튼 봉명(오후13시~15시)</p>
                 </li>
                 <li>
                     <h3>7월24일(목)</h3>
-                    <p>대구 골프존파크 남산스크린 (오후13시~15시)</p>
+                    <p>대구 골프존파크 남산스크린(오후13시~15시)</p>
                 </li>
                 <li>
                     <h3>7월25일(금)</h3>
-                    <p>광주광역시 누브골프아카데미 (오후13시~15시)</p>
+                    <p>광주 누브골프아카데미(오후13시~15시)</p>
                 </li>
                 <li>
                     <h3>7월28일(월)</h3>
-                    <p>송도 AT센터 골프존파크 (오후13시~15시)</p>
+                    <p>송도 AT센터 골프존파크(오후13시~15시)</p>
                 </li>
                 <li>
                     <h3>7월29일(화)</h3>
-                    <p>미사 주차빌딩점 골프존파크 (오후13시~15시)</p>
+                    <p>미사 주차빌딩점 골프존파크(오후13시~15시)</p>
+                </li>
+            </ul>
+
+            <!-- 8월 일정 -->
+            <ul class="lesson-schedule month-schedule hidden" id="august">
+                <li>
+                    <h3>8월5일(월)</h3>
+                    <p>용산구 골프존파크 센터(오후13시~15시)</p>
+                </li>
+                <li>
+                    <h3>8월6일(화)</h3>
+                    <p>수원 영통 실내골프연습장(오후13시~15시)</p>
+                </li>
+                <li>
+                    <h3>8월12일(월)</h3>
+                    <p>청담동 스윙365(오후13시~15시)</p>
+                </li>
+                <li>
+                    <h3>8월19일(월)</h3>
+                    <p>성수동 어반골프클럽(오후13시~15시)</p>
+                </li>
+                <li>
+                    <h3>8월26일(월)</h3>
+                    <p>부산 해운대골프존파크(오후13시~15시)</p>
                 </li>
             </ul>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 원데이 클래스 | All rights reserved.</p>
+            <p>문의전화: 010-3281-8150</p>
+        </div>
+    </footer>
 
     <script>
         const menuBtn = document.getElementById("menu-btn");
         const navMenu = document.getElementById("nav-menu");
         menuBtn.addEventListener("click", () => {
             navMenu.classList.toggle("hidden");
+        });
+
+        const monthBtns = document.querySelectorAll(".month-btn");
+        const schedules = document.querySelectorAll(".month-schedule");
+
+        monthBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                monthBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const target = btn.dataset.month;
+                schedules.forEach(sch => {
+                    sch.classList.toggle("hidden", sch.id !== target);
+                });
+            });
         });
     </script>
 </body>

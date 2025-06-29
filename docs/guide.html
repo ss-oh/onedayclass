@@ -5,13 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>원데이 클래스 - 이용안내</title>
+    <link rel="icon" href="img/logo01.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="img/logo01.ico" sizes="16x16" type="image/png">
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
     <header>
         <div class="container header-container">
-            <h1><a href="index.html">원데이 클래스</a></h1>
+            <div class="logo"><a href="index.html">OneDayClass</a></div>
             <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
             <nav id="nav-menu" class="hidden">
                 <a href="index.html">Home</a>
@@ -23,12 +25,24 @@
         </div>
     </header>
 
+    <section class="banner-warning">
+        <h2>신청 전 꼭 읽어보세요</h2>
+    </section>
+
     <main>
         <section class="container">
-            <h2>이용안내</h2>
             <img src="img/img02.png" alt="이용안내 이미지" class="responsive-img" />
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 원데이 클래스 | All rights reserved.</p>
+            <p>
+                문의전화: 010-3281-8150
+            </p>
+        </div>
+    </footer>
 
     <script>
         const menuBtn = document.getElementById("menu-btn");
