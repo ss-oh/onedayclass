@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 4000;
 
 app.post("/send-sms", async (req, res) => {
   const { name, phone, lesson } = req.body;
-  const message = `[신청] ${name}님이 '${lesson}' 레슨 신청\n연락처: ${phone}`;
+  const message = `[신청] ${name}'${lesson}'님이  레슨 신청\n연락처: ${phone}`;
 
   const apiKey = process.env.API_KEY;
   const apiSecret = process.env.API_SECRET;
