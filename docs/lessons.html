@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>원데이 클래스 - 레슨 일정</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <h1><a href="index.html">원데이 클래스</a></h1>
+            <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
+            <nav id="nav-menu" class="hidden">
+                <a href="index.html">Home</a>
+                <a href="guide.html">이용안내</a>
+                <a href="pro.html">프로소개</a>
+                <a href="lessons.html">레슨일정</a>
+                <a href="apply.html">레슨 신청</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>레슨 일정</h2>
+            <ul class="lesson-schedule">
+                <li>
+                    <h3>골프 초급</h3>
+                    <p>매주 화, 목 오후 2시 - 3시</p>
+                    <img src="lesson-beginner.jpg" alt="골프 초급 이미지" class="responsive-img" />
+                </li>
+                <li>
+                    <h3>골프 중급</h3>
+                    <p>매주 월, 수 오후 4시 - 5시</p>
+                    <img src="lesson-intermediate.jpg" alt="골프 중급 이미지" class="responsive-img" />
+                </li>
+                <li>
+                    <h3>골프 고급</h3>
+                    <p>매주 토 오전 10시 - 11시</p>
+                    <img src="lesson-advanced.jpg" alt="골프 고급 이미지" class="responsive-img" />
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const navMenu = document.getElementById("nav-menu");
+        menuBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>

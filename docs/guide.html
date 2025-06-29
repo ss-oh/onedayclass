@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>원데이 클래스 - 이용안내</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <h1><a href="index.html">원데이 클래스</a></h1>
+            <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
+            <nav id="nav-menu" class="hidden">
+                <a href="index.html">Home</a>
+                <a href="guide.html">이용안내</a>
+                <a href="pro.html">프로소개</a>
+                <a href="lessons.html">레슨일정</a>
+                <a href="apply.html">레슨 신청</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>이용안내</h2>
+            <p>원데이 클래스의 수업 진행 방식, 준비물, 수강 방법 등을 안내합니다.</p>
+            <ul>
+                <li>수업은 1시간 단위로 진행됩니다.</li>
+                <li>개인 골프 클럽과 운동복을 준비해주세요.</li>
+                <li>수업 시작 10분 전까지 도착해 주세요.</li>
+                <li>수강료는 현장 결제 또는 온라인 결제가 가능합니다.</li>
+            </ul>
+            <img src="/img/img02.png" alt="이용안내 이미지" class="responsive-img" />
+        </section>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const navMenu = document.getElementById("nav-menu");
+        menuBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>

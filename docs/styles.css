@@ -1,3 +1,4 @@
+/* 공통 리셋 및 기본 스타일 */
 * {
   box-sizing: border-box;
 }
@@ -6,6 +7,14 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   background: #f9f9f9;
   color: #333;
+  line-height: 1.5;
+}
+
+/* 링크 스타일 */
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .container {
@@ -14,6 +23,7 @@ body {
   margin: 20px auto;
 }
 
+/* 헤더 */
 header {
   background: #006633;
   color: white;
@@ -42,12 +52,87 @@ nav a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .hidden {
-  display: none;
+  display: block;
 }
 
+/* 이미지 반응형 */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* 홈페이지 주요 링크 박스 */
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.link-box {
+  flex: 1 1 calc(33% - 10px);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.link-box h3 {
+  margin-bottom: 10px;
+}
+
+.link-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.link-box button {
+  background-color: #006633;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.link-box button:hover {
+  background-color: #004d26;
+}
+
+/* 일반 섹션 제목 스타일 */
+h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #006633;
+}
+
+/* 이용안내, 프로소개, 레슨일정 페이지 내용 스타일 */
+.section-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* 폼 스타일 (레슨신청) */
 form {
   background: white;
   padding: 20px;
@@ -89,7 +174,7 @@ button[type="submit"]:hover {
   background: #004d26;
 }
 
-/* 모바일용 햄버거 메뉴 보이기 */
+/* 모바일용 햄버거 메뉴 보이기 및 네비게이션 스타일 */
 @media (max-width: 600px) {
   #menu-btn {
     display: block;
@@ -102,9 +187,21 @@ button[type="submit"]:hover {
     border-radius: 6px;
     padding: 10px;
     flex-direction: column;
+    display: flex;
   }
   nav a {
     display: block;
     margin: 8px 0;
+  }
+
+  /* 홈 링크 박스 모바일 */
+  .home-links {
+    flex-direction: column;
+  }
+  .link-box {
+    flex: 1 1 100%;
+  }
+  .hidden {
+    display: none;
   }
 }
