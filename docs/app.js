@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
   const lesson = formData.get("lesson");
   const schedule = formData.get("schedule");
   const agree = formData.get("agree");
-  console.log({ name, phone, lesson, schedule, agree });
+
   if (!name || !phone || !lesson || !schedule || !agree) {
     alert("모든 항목을 입력해 주세요.(개인정보 제공 동의 포함)");
     return;
@@ -29,7 +29,7 @@ form.addEventListener("submit", async (e) => {
         "Content-Type": "application/json",
         Authorization: "hmac-sha256 NCSXTXVEMJC7BTKC:FDC1BAWYZD9A4KCB2EYHU6GWJEEPMW15",
       },
-      body: JSON.stringify({ name, phone, lesson, schedule }),
+      body: JSON.stringify({ name, phone, lesson, schedule }), // 반드시 schedule 포함
     });
 
     alert("신청이 완료되었습니다.");

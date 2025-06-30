@@ -17,7 +17,7 @@
             <button id="menu-btn" aria-label="메뉴 열기">&#9776;</button>
             <nav id="nav-menu" class="hidden">
                 <a href="index.html">Home</a>
-                <a href="guide.html">이용안내</a>
+                <a href="guide.html">유의사항</a>
                 <a href="pro.html">프로소개</a>
                 <a href="lessons.html">레슨일정</a>
                 <a href="apply.html">레슨 신청</a>
@@ -28,6 +28,9 @@
     <main>
         <section class="container">
             <h2>레슨 신청</h2>
+            <section class="banner-warning2">
+                <h2>*신청자가 많습니다.꼭 참여 가능한분만 신청바랍니다</h2>
+            </section>
             <form id="apply-form">
                 <label for="name">이름</label>
                 <input type="text" id="name" name="name" required />
@@ -63,10 +66,43 @@
                 <div class="checkbox-group">
                     <input type="checkbox" id="agree" name="agree" required />
                     <label for="agree">개인정보 제공에 동의합니다.</label>
+                    <button type="button" id="open-modal" class="link-btn">[더보기]</button>
                 </div>
                 <button type="submit">신청하기</button>
             </form>
         </section>
+        <div id="privacy-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>개인정보 수집 및 이용 동의</h3>
+                <p>
+                    주식회사 <strong>샤인</strong>(이하 ‘회사’)는 정보통신망 이용촉진 및 정보보호 등에 관한 법률을 준수하고 있으며 이에 따라 개인정보취급방침을 통하여 회원이 제공한
+                    개인정보를 어떤 용도와 방식으로 이용하고자 하는지를 알려드림으로써 개인정보를 효과적이고 적극적으로 보호하기 위해 항상 노력하고 있습니다.
+                </p>
+                <p>
+                    수집된 개인정보는 행사정보 안내(문자/전화), 경품배송, 이벤트 참여 및 추첨, 제휴사 상품 안내(문자/전화) 및 상담, 이벤트 혜택제공 등을 목적으로 활용하며, 개인정보
+                    처리방침에서 고지한 정보주체의 사전 동의없이 수집항목의 범위를 초과하여 제휴사에게 제공하지 않습니다.
+                </p>
+                <p><strong>1. 개인정보 수집항목:</strong><br>
+                    성명, 연락처(휴대전화), 생년월일, 주소
+                </p>
+                <p><strong>2. 제휴사:</strong><br>
+                    주식회사 샤인
+                </p>
+                <p><strong>3. 개인정보 보유 및 이용기간:</strong><br>
+                    정보수입 및 활용동의일로부터 1년<br>
+                    (단, 관련법규에 별도 규정이 있는 경우 법규를 따름)
+                </p>
+                <p><strong>[행사장 안전사고 배상책임]</strong><br>
+                    행사장 내에서 본인 부주의로 발생된 안전사고는 행사관계자가 책임지지 않으므로 안전에 각별히 유의해야 합니다.
+                </p>
+                <p>
+                    ※ 상기 내용이 변경되는 경우 본 게시를 통해 그 내용을 안내해 드립니다.<br>
+                    ※ 본 약관에 동의하는 것은 개인정보 취급 및 활용동의, 행사장 안전사고 배상책임 내용을 숙지한 것으로 간주합니다.
+                </p>
+            </div>
+        </div>
+
     </main>
 
     <footer class="site-footer">
@@ -85,6 +121,24 @@
             navMenu.classList.toggle("hidden");
         });
 
+        // 개인정보 동의 모달
+        const openModal = document.getElementById("open-modal");
+        const privacyModal = document.getElementById("privacy-modal");
+        const closeModal = document.querySelector(".close-btn");
+
+        openModal.addEventListener("click", () => {
+            privacyModal.classList.remove("hidden");
+        });
+
+        closeModal.addEventListener("click", () => {
+            privacyModal.classList.add("hidden");
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === privacyModal) {
+                privacyModal.classList.add("hidden");
+            }
+        });
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
@@ -119,6 +173,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>
