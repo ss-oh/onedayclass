@@ -11,8 +11,8 @@ app.use(express.json());
 const PORT = process.env.PORT || 4000;
 
 app.post("/send-sms", async (req, res) => {
-  const { name, phone, lesson } = req.body;
-  const message = `[신청] ${name}님이 '${lesson}' 레슨 신청\n연락처: ${phone}`;
+  const { name, phone, lesson, schedule } = req.body;
+  const message = `[레슨 신청 접수]\n` + `이름: ${name}\n` + `연락처: ${phone}\n` + `나이 선택: ${lesson}\n` + `일정: ${schedule}`;
 
   const apiKey = process.env.API_KEY;
   const apiSecret = process.env.API_SECRET;
