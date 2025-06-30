@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
   const lesson = formData.get("lesson");
   const schedule = formData.get("schedule");
   const agree = formData.get("agree");
-
+  console.log({ name, phone, lesson, schedule, agree });
   if (!name || !phone || !lesson || !schedule || !agree) {
     alert("모든 항목을 입력해 주세요.(개인정보 제공 동의 포함)");
     return;
