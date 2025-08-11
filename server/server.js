@@ -21,7 +21,7 @@ app.post("/send-sms-onedayclass", async (req, res) => {
 // acegreen 신청 엔드포인트
 app.post("/send-sms-acegreen", async (req, res) => {
   const { name, phone, schedule } = req.body;
-  const message = `[신청접수]\n상호명: ${name}\n연락처: ${phone}\n지역: ${schedule}`;
+  const message = `[무료신청]\n상호명: ${name}\n연락처: ${phone}\n지역: ${schedule}`;
 
   await sendSms(message, res);
 });
