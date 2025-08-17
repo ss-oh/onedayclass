@@ -27,7 +27,7 @@ app.post("/send-sms-acegreen", async (req, res) => {
 });
 // 4050trip 신청 엔드포인트
 app.post("/send-sms-4050-trip", async (req, res) => {
-  const { name, phone, schedule, name2, phone2 } = req.body;
+ const { name, phone, schedule, name2, phone2, lesson } = req.body;
   const message = `[여행신청접수]\n이름: ${name}\n연락처: ${phone}\n지역: ${schedule}\n나이 : ${lesson}\n동행자 : ${name2}\n동행자연락처 : ${phone2}`;
 
   await sendSms(message, res);
