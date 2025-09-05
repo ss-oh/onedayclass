@@ -35,7 +35,7 @@ app.post("/send-sms-4050-trip", async (req, res) => {
 // korfood 신청 엔드포인트
 app.post("/send-sms-korfood", async (req, res) => {
  const { trip, name, phone, schedule, lesson } = req.body;
-  const message = `[한식체험단접수]\n일정: ${trip}\n이름: ${name}\n나이 : ${lesson}\n연락처: ${phone}\n지역: ${schedule}`;
+  const message = `[한식체험단접수]\n일정: ${trip}\n이름: ${name}\n나이 : ${lesson}\n연락처: ${phone}`;
 
   await sendSms(message, res);
 });
